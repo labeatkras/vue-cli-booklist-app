@@ -1,30 +1,37 @@
 <template>
-  <nav>
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
-  </nav>
+  <LayoutHeader />
   <router-view />
 </template>
 
+<script>
+import LayoutHeader from "./components/LayoutHeader.vue";
+
+export default {
+  components: {
+    LayoutHeader,
+  },
+};
+</script>
+
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
+:root {
+  --primary: #ffffff;
+  --primary-dark: #9c9c9c;
+  --secondary: #f39c12;
 }
 
-nav {
-  padding: 30px;
+body {
+  font-family: Arial, Helvetica, sans-serif;
 }
 
-nav a {
-  font-weight: bold;
-  color: #2c3e50;
+.inside {
+  margin: 10px;
 }
 
-nav a.router-link-exact-active {
-  color: #42b983;
+@media only screen and (min-width: 1140px) {
+  .inside {
+    width: 960px;
+    margin: 0 auto;
+  }
 }
 </style>
